@@ -45,6 +45,7 @@ fig = px.line(
     labels={"generation": "世代", "avg_total": "平均合計種族値"},
 )
 fig.write_html("output/stats_by_generation.html")
+fig.write_image("output/data01-chart.png", scale=2)
 
 # ④ 箱ひげ図
 fig2 = px.box(
@@ -53,5 +54,7 @@ fig2 = px.box(
     labels={"generation": "世代", "total": "合計種族値"},
 )
 fig2.write_html("output/stats_distribution.html")
+# 二回目のwrite_image実行で失敗する可能性がある
+fig2.write_image("output/data02-chart.png", scale=2)
 
 print("保存しました")
